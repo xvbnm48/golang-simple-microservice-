@@ -18,7 +18,7 @@ func GetJWT() (string, error) {
 	claims := token.Claims.(jwt.MapClaims)
 	claims["authorized"] = true
 	claims["aud"] = "billing.jwtgo.io"
-	claims["iss"] = "jwgo.io"
+	claims["iss"] = "jwtgo.io"
 	claims[""] = time.Now().Add(time.Minute * 1).Unix()
 
 	tokenString, err := token.SignedString(MySigningKey)
